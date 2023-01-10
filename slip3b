@@ -1,0 +1,35 @@
+object slip2b
+{
+	def isprime(n:Int):Boolean=
+	{
+			for(i<-2 to n/2)
+			{
+				if(n%i==0) return false
+			}
+			return true
+	}
+	def main(args:Array[String]):Unit=
+	{
+		println("Enter n1:")
+		var n1:Int=scala.io.StdIn.readInt()
+		println("Enter n2:")
+		var n2:Int=scala.io.StdIn.readInt()
+		var sum=0
+		var cnt=0
+		
+		for(i<- n1 to n2)
+		{
+			if(isprime(i))
+			{
+				sum+=i
+				cnt+=1
+			}
+				
+		}
+		println("count is:"+cnt)
+		var result=sum/cnt
+		println("sum of prime numbers between "+n1+" and "+n2+" is:"+sum)
+		
+		printf("Average of prime numbers between "+n1+" and "+n2+" is:"+result)
+	}
+}
