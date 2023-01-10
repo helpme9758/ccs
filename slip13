@@ -1,0 +1,18 @@
+object rev
+{
+	def convert(c:Char):Char=
+	{
+		if(c.isLower)
+			return (c.toUpper)
+		else
+			return (c.toLower)
+	}	
+	def main(args: Array[String])
+	{
+		println("Enter String")
+		var str=scala.io.StdIn.readLine()
+		println("String After reversing the case:")
+		println(str.map(convert))
+		
+	}
+}
