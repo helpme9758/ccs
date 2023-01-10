@@ -1,0 +1,47 @@
+object slip2a
+{
+	def binary(n:Int):String=
+	{
+			var n1:Int=n
+			var s:String=""
+			while(n1>0)
+			{
+				s=s.concat((n1%2).toString())
+				n1= n1/2
+			}
+			return  s.reverse
+	}
+	def octal(n:Int):String=
+	{
+		var n1:Int=n
+		var s:String=""
+		while(n1>0)
+		{
+			s=s.concat((n1%8).toString())
+			n1= n1/8
+		}
+		return s.reverse
+	}
+	def main(args:Array[String]):Unit=
+	{
+		println("Enter 5 random numbers:")
+		var rand=scala.util.Random
+		var arr:Array[Int]=new Array[Int](5)
+		for(i<- 0 to 4)
+		{
+			arr(i)=rand.nextInt(100)
+			println("Number "+i+" of "+arr(i)+" in binary is:"+binary(arr(i)))
+		println("Number "+i+" of "+arr(i)+" in octal is:"+octal(arr(i)))
+			
+		}
+		
+		/*println("enter a number:")
+		var n=scala.io.StdIn.readInt()
+		println(binary(n))
+		println(octal(n))
+		*/
+		
+	}
+	
+	
+}
